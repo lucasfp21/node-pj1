@@ -1,0 +1,26 @@
+# Dependências do Node.js
+node_modules/
+
+# Arquivo de lock do npm
+package-lock.json
+
+# Logs e erros
+*.log
+
+# Configurações do ambiente local
+.env
+
+# Diretórios gerados pelo editor de código
+.vscode/
+.idea/
+
+# Cache do TypeScript (caso use)
+dist/
+build/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# modulos
+node_modules/
