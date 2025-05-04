@@ -9,15 +9,17 @@
 
 ---
 
-## Personalização
+## Personalização de Arquivos
 
-Customize os seguintes arquivos conforme necessário:
+Edite os seguintes arquivos conforme necessário:
 
 - `devcontainer.json`
 - `docker-compose.yaml`
 - `Dockerfile`
 
-### Exemplo de customização no `devcontainer.json`:
+### Extensões do VS Code
+
+No arquivo `devcontainer.json`, adicione:
 
 ```json
 "customizations": {
@@ -27,3 +29,54 @@ Customize os seguintes arquivos conforme necessário:
     ]
   }
 }
+```
+
+---
+
+## Rebuild no Container
+
+Após configurar os arquivos, reconstrua o container usando:
+
+- Paleta de comandos: `Ctrl + Shift + P` → **Dev Containers: Rebuild Container**
+
+---
+
+## Comando de Inicialização
+
+No `devcontainer.json`, adicione o comando de inicialização para instalar dependências automaticamente:
+
+```json
+"postCreateCommand": "npm install"
+```
+
+---
+
+## Configuração de Debug
+
+1. Pressione `Ctrl + Shift + P` e selecione **Debug: Add Configuration...**
+2. Escolha **Node.js**.
+3. O VS Code criará automaticamente o arquivo `launch.json`.
+
+### Atalhos de Debug
+
+- `F5`: Inicia o debug
+- `F10`: Pula o breakpoint atual
+
+---
+
+## Ambiente de Produção (PRD)
+
+1. Crie um novo `Dockerfile` para produção.
+2. Crie um `docker-compose.yaml` específico para PRD.
+3. Para rodar localmente em modo produção, execute:
+
+```bash
+docker compose up -d --build
+```
+
+---
+
+## Observações
+
+- Separe os arquivos de desenvolvimento e produção.
+- Verifique as configurações antes de realizar o build final.
